@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683333641043",
+    "project_id": "auth-a1a15",
+    "storage_bucket": "auth-a1a15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683333641043:android:2a06512f8d1bd3d67377a6",
+        "android_client_info": {
+          "package_name": "com.emzon.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683333641043-onlrceadgdjtiau4rtg7r55q746d2vhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn4zr7eQ9DuOpiI3EIRYRHKecjkRMeUB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683333641043-onlrceadgdjtiau4rtg7r55q746d2vhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
