@@ -51,6 +51,7 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
                 controller :phoneNumberController,
                 keyboardType: TextInputType.phone,
                 decoration:InputDecoration(
+                  border: OutlineInputBorder(),
                   hintText: '+977 9867032145',
                     helperText: 'Include Country code too',
                     prefixIcon: Icon(Icons.phone),
