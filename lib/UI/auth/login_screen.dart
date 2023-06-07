@@ -14,6 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+   bool _obscureText= true;
    bool loading=false;
   final _formKey=GlobalKey<FormState>();
   final emailController =TextEditingController();
@@ -98,10 +99,18 @@ Utils().toastMessage(error.toString());
                       TextFormField(
 
                         controller:passwordController ,
-                        obscureText: true,
+                        obscureText: _obscureText,
                         decoration: InputDecoration(
                             hintText: 'Password',
-                            prefixIcon: Icon(Icons.lock)
+                            prefixIcon: Icon(Icons.lock),
+                          suffixIcon:GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                _obscureText=!_obscureText;
+                              });
+                            },
+                            child:Icon(_obscureText ?Icons.visibility_off :Icons.visibility) ,
+                          ),
 
 
                       ),
