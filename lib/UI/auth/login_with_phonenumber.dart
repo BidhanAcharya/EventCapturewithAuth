@@ -52,6 +52,7 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
                 keyboardType: TextInputType.phone,
                 decoration:InputDecoration(
                   hintText: '+977 9867032145',
+                    helperText: 'Include Country code too',
                     prefixIcon: Icon(Icons.phone),
 
 
@@ -62,18 +63,37 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
            SizedBox(height: 50,),
          Container(
            width: 130,
-           child: RoundButton(title: 'Login', onTap:(){
+           child: RoundButton(title: 'Login',loading: loading, onTap:(){
+             setState(() {
+               loading=true;
+             });
         auth.verifyPhoneNumber(
             phoneNumber:phoneNumberController.text ,
-            verificationCompleted:(_){} ,
+            verificationCompleted:(_){
+              setState(() {
+                loading=false;
+              });
+            } ,
             verificationFailed:(error){
+              setState(() {
+                loading=false;
+              });
               Utils().toastMessage(error.toString());
             } ,
             codeSent: (String verificationID, int? token){
               Navigator.push(context, MaterialPageRoute(builder:(context)=>VerifyCodeScreen(verificationId: verificationID,) ));
+
+              setState(() {
+                loading=false;
+              });
+
+
             },
             codeAutoRetrievalTimeout: (error){
               Utils().toastMessage(error.toString());
+              setState(() {
+                loading=false;
+              });
             });
            }),
          )
