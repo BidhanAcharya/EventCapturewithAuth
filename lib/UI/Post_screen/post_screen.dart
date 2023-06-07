@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebaseauth/UI/Post_screen/add_postscreen.dart';
 import 'package:firebaseauth/UI/auth/login_screen.dart';
 import 'package:firebaseauth/Utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,13 @@ class _PostScreenState extends State<PostScreen> {
         title: Text('Post Screen '),
         centerTitle: true,
         actions: [
+          InkWell(
+            onTap:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> AddPost()));
+            } ,
+            child: Icon(Icons.add),
+          ),
+          SizedBox(width: 15,),
           IconButton(onPressed: (){
 
          auth.signOut().then((value) {
@@ -27,7 +35,12 @@ class _PostScreenState extends State<PostScreen> {
          }).onError((error, stackTrace){
            Utils().toastMessage(error.toString());
          } );
-          }, icon: Icon(Icons.logout))
+          }, icon: Icon(Icons.logout)),
+
+
+
+
+
         ],
       ),
     );

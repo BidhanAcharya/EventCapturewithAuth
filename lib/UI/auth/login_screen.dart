@@ -75,6 +75,7 @@ Utils().toastMessage(error.toString());
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Form(
+
                   key: _formKey,
                   child: Column(
                     children: [
@@ -97,7 +98,6 @@ Utils().toastMessage(error.toString());
                       SizedBox(height: 20,),
 
                       TextFormField(
-
                         controller:passwordController ,
                         obscureText: _obscureText,
                         decoration: InputDecoration(
